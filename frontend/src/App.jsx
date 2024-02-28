@@ -1,12 +1,10 @@
-// 
+//
 import Home from "./home/Home";
 
 const App = () => {
   return (
     <>
-<Home />
-    
- 
+      <Home />
     </>
   );
 };
