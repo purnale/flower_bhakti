@@ -1,44 +1,29 @@
 import { Link } from "react-router-dom";
-import { Sidebar } from "flowbite-react";
-import {
-  HiArrowSmRight,
-  HiChartPie,
-  HiTable,
-  HiUser,
-  HiViewBoards,
-} from "react-icons/hi";
-import dp from "../assets/dp.jpg";
-
 const SideNav = () => {
   return (
-    <Sidebar aria-label="Sidebar with logo branding example">
-      <Sidebar.Logo as={Link} to="#" img={dp} imgAlt="Flowbite logo">
-        Bhakti
-      </Sidebar.Logo>
-      <Sidebar.Items>
-        <Sidebar.ItemGroup>
-          <Sidebar.Item as={Link} to="/" icon={HiChartPie}>
-            Dashboard
-          </Sidebar.Item>
-          <Sidebar.Item as={Link} to="/dashbord/addflower" icon={HiViewBoards}>
-            Add Flower
-          </Sidebar.Item>
-          {/* <Sidebar.Item as={Link} to="/dashbord/editflower" icon={HiInbox}>
-            Edit Flower
-          </Sidebar.Item> */}
-          <Sidebar.Item as={Link} to="/dashbord/manageflower" icon={HiUser}>
-            Manage Flower
-          </Sidebar.Item>
+    <header>
+      <input type="checkbox" name="" id="toggler" />
+      <label htmlFor="toggler" className="fas fa-bars"></label>
 
-          <Sidebar.Item as={Link} to="#" icon={HiArrowSmRight}>
-            Sign In
-          </Sidebar.Item>
-          <Sidebar.Item as={Link} to="#" icon={HiTable}>
-            Sign Up
-          </Sidebar.Item>
-        </Sidebar.ItemGroup>
-      </Sidebar.Items>
-    </Sidebar>
+      <a href="#" className="logo">
+        Dashbord<span>.</span>
+      </a>
+
+      <nav className="navbar">
+        {/* <a href="#home">home</a> */}
+        {/* <a href="#about">about</a> */}
+        <Link to="/">Go Home</Link>
+        <Link to="/dashbord/addflower">Add Flower</Link>
+        <Link to="/dashbord/manageflower">Manage Flowers</Link>
+        <Link to="/">Sign Out</Link>
+      </nav>
+
+      <div className="icons">
+        <a href="#" className="fas fa-heart"></a>
+        <a href="#" className="fas fa-shopping-cart"></a>
+        <a href="#" className="fas fa-user"></a>
+      </div>
+    </header>
   );
 };
 

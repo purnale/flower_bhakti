@@ -4,12 +4,34 @@ import AddFlower from "./dashbord/components/AddFlower.jsx";
 import App from "./App.jsx";
 import EditFlower from "./dashbord/components/EditFlower.jsx";
 import ManageFlowers from "./dashbord/components/ManageFlowers.jsx";
+import HomePage from "./pages/HomePage.jsx";
+import ProductPage from "./pages/ProductPage.jsx";
+import ContaactPage from "./pages/ContaactPage.jsx";
+// import ProductDetails from "./productDetails/ProductDetails.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    children: [
+      {
+        path: "/",
+        element: <HomePage />,
+      },
+      {
+        path: "/productpage",
+        element: <ProductPage />,
+      },
+      {
+        path: "/contactpage",
+        element: <ContaactPage />,
+      },
+    ],
   },
+  // {
+  //   path: "/product",
+  //   element: <ProductDetails />,
+  // },
   {
     path: "/dashbord",
     element: <DashbordLyout />,

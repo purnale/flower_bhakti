@@ -40,18 +40,26 @@ const ManageFlowers = () => {
   };
 
   return (
-    <div className="px-4 my-12">
-      <h2 className="mb-8 text-3xl font-bold">Manage Your Flowers</h2>
+    // <div className="px-4 my-12">
+    //   <h2 className="mb-8 text-3xl font-bold">Manage Your Flowers</h2>
 
-      <Table className="width__form">
-        <Table.Head>
+    
+    // </div>
+    <section className="contact pt-32" id="contact">
+    <h1 className="heading">
+      <span> Manage </span> Flower
+    </h1>
+
+    <div className="row"> 
+    <Table className="w-full">
+        <Table.Head className=" text-5xl px-8">
           <Table.HeadCell>No.</Table.HeadCell>
           <Table.HeadCell>Flower Name</Table.HeadCell>
           <Table.HeadCell>Discount</Table.HeadCell>
           <Table.HeadCell>Price</Table.HeadCell>
           <Table.HeadCell>Actions</Table.HeadCell>
         </Table.Head>
-        <Table.Body className="divide-y">
+        <Table.Body className="divide-y text-4xl">
           {allFlowers.map((flower, index) => {
             const { _id, flowerTitle, price, discount } = flower;
             return (
@@ -66,13 +74,13 @@ const ManageFlowers = () => {
                   <Link
                     to={`/dashbord/editflower/${_id}`}
                     state={{ flower }}
-                    className="font-medium text-cyan-600 hover:underline dark:text-cyan-500 mr-5"
+                    className="btn"
                   >
                     Edit
                   </Link>
                   <button
                     onClick={() => handleDeleteBook(_id)}
-                    className="bg-red-600 px-4 py-1 font-semibold text-white  hover:bg-sky-600 rounded-sm"
+                    className="btn"
                   >
                     Delete
                   </button>
@@ -83,6 +91,7 @@ const ManageFlowers = () => {
         </Table.Body>
       </Table>
     </div>
+  </section>
   );
 };
 

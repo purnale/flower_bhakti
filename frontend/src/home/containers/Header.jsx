@@ -10,13 +10,17 @@ const Header = () => {
       </a>
 
       <nav className="navbar">
-        <a href="#home">home</a>
-        <a href="#about">about</a>
-        <a href="#products">products</a>
-        <a href="#review">review</a>
-        <a href="#contact">contact</a>
+        {/* <a href="#home">home</a> */}
+        {/* <a href="#about">about</a> */}
+        <Link to="/">Home</Link> 
+        <Link to="/aboutpage">About</Link> 
+        <Link to="/productpage">Products</Link> 
+        {/* <a href="#products">products</a> */}
+        {/* <a href="#review">review</a> */}
+        <Link to="/contactpage">Contact</Link> 
         {/* <a href="#contact">contact</a> */}
-        <Link to="/dashbord">dashbord here</Link> 
+        {/* <a href="#contact">contact</a> */}
+        <Link to="/dashbord">Sign In</Link> 
       </nav>
 
       <div className="icons">

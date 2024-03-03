@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Button, Label, TextInput } from "flowbite-react";
+// import { Button, Label, TextInput } from "flowbite-react";
 
 const EditFlower = () => {
   const { id } = useParams();
@@ -57,67 +57,116 @@ const EditFlower = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubmit} className="flex max-w-md flex-col gap-4">
-      <div>
-        <div className="mb-2 block">
-          <Label htmlFor="discount" value="Enter Discount" />
-        </div>
-        <TextInput
+    // <form onSubmit={handleFormSubmit} className="flex max-w-md flex-col gap-4">
+    //   <div>
+    //     <div className="mb-2 block">
+    //       <Label htmlFor="discount" value="Enter Discount" />
+    //     </div>
+    //     <TextInput
+    //       id="discount"
+    //       name="discount"
+    //       type="number"
+    //       defaultValue={flowerData.discount}
+    //       placeholder="Enter Discount"
+    //       required
+    //       shadow
+    //     />
+    //   </div>
+    //   <div>
+    //     <div className="mb-2 block">
+    //       <Label htmlFor="flowerTitle" value="Enter Flower Name" />
+    //     </div>
+    //     <TextInput
+    //       id="flowerTitle"
+    //       name="flowerTitle"
+    //       type="text"
+    //       defaultValue={flowerData.flowerTitle}
+    //       placeholder="Enter Flower Name"
+    //       required
+    //       shadow
+    //     />
+    //   </div>
+    //   <div>
+    //     <div className="mb-2 block">
+    //       <Label htmlFor="imageURL" value="Enter Flower Image Link" />
+    //     </div>
+    //     <TextInput
+    //       id="imageURL"
+    //       name="imageURL"
+    //       type="text"
+    //       defaultValue={flowerData.imageURL}
+    //       placeholder="Enter Flower Image Link"
+    //       required
+    //       shadow
+    //     />
+    //   </div>
+    //   <div>
+    //     <div className="mb-2 block">
+    //       <Label htmlFor="price" value="Enter Price" />
+    //     </div>
+    //     <TextInput
+    //       id="price"
+    //       name="price"
+    //       type="number"
+    //       defaultValue={flowerData.price}
+    //       placeholder="Enter Price"
+    //       required
+    //       shadow
+    //     />
+    //   </div>
+
+    //   <Button type="submit">Edit Flower</Button>
+    // </form>
+    <section className="contact pt-32" id="contact">
+    <h1 className="heading">
+      <span> Edit </span> Flower
+    </h1>
+
+    <div className="row">
+      <form onSubmit={handleFormSubmit}>
+      
+        <input
+         id="price"
+         name="price"
+         type="number"
+         defaultValue={flowerData.price}
+         placeholder="Enter Price"
+         className="box"
+         required
+        />
+          <input
           id="discount"
           name="discount"
           type="number"
           defaultValue={flowerData.discount}
           placeholder="Enter Discount"
+          className="box"
           required
-          shadow
         />
-      </div>
-      <div>
-        <div className="mb-2 block">
-          <Label htmlFor="flowerTitle" value="Enter Flower Name" />
-        </div>
-        <TextInput
-          id="flowerTitle"
-          name="flowerTitle"
-          type="text"
-          defaultValue={flowerData.flowerTitle}
-          placeholder="Enter Flower Name"
-          required
-          shadow
+        <input
+           id="imageURL"
+           name="imageURL"
+           type="text"
+           defaultValue={flowerData.imageURL}
+           placeholder="Enter Flower Image Link"
+           className="box"
+           required
         />
-      </div>
-      <div>
-        <div className="mb-2 block">
-          <Label htmlFor="imageURL" value="Enter Flower Image Link" />
-        </div>
-        <TextInput
-          id="imageURL"
-          name="imageURL"
-          type="text"
-          defaultValue={flowerData.imageURL}
-          placeholder="Enter Flower Image Link"
-          required
-          shadow
+        <input
+        id="flowerTitle"
+        name="flowerTitle"
+        type="text"
+        defaultValue={flowerData.flowerTitle}
+        placeholder="Enter Flower Name"
+                className="box"
+        required
         />
-      </div>
-      <div>
-        <div className="mb-2 block">
-          <Label htmlFor="price" value="Enter Price" />
-        </div>
-        <TextInput
-          id="price"
-          name="price"
-          type="number"
-          defaultValue={flowerData.price}
-          placeholder="Enter Price"
-          required
-          shadow
-        />
-      </div>
-
-      <Button type="submit">Edit Flower</Button>
-    </form>
-  );
+        
+        <input type="submit" value="Edit Flower" className="btn" />
+      </form>
+    </div>
+  </section>
+    );
 };
 
 export default EditFlower;
