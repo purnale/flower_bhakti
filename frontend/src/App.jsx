@@ -5,12 +5,21 @@ import Footer from "./home/containers/Footer";
 // import ProductDetails from "./productDetails/ProductDetails";
 import { Outlet } from "react-router-dom";
 import './App.css';
+import { useState } from "react";
+import SignIn from "./pages/SignIn";
 const App = () => {
+
+  const [isSignIn, setIsSingIn] = useState(true);
+
+
   return (
     <>
       <Header />
       {/* <ProductDetails /> */}
-      <Outlet />
+
+      {isSignIn === true ? <Outlet /> : <SignIn setIsSignIn={setIsSingIn} />}
+
+
       <Footer />
     </>
   );

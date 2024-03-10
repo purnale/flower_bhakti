@@ -12,15 +12,15 @@ const Header = () => {
       <nav className="navbar">
         {/* <a href="#home">home</a> */}
         {/* <a href="#about">about</a> */}
-        <Link to="/">Home</Link> 
-        <Link to="/aboutpage">About</Link> 
-        <Link to="/productpage">Products</Link> 
+        <Link to="/">Home</Link>
+        <Link to="/aboutpage">About</Link>
+        <Link to="/productpage/65e17c3976286b9c59415d96">Products</Link>
         {/* <a href="#products">products</a> */}
         {/* <a href="#review">review</a> */}
-        <Link to="/contactpage">Contact</Link> 
+        <Link to="/contactpage">Contact</Link>
         {/* <a href="#contact">contact</a> */}
         {/* <a href="#contact">contact</a> */}
-        <Link to="/dashbord">Sign In</Link> 
+        <Link to="/dashbord">Sign In</Link>
       </nav>
 
       <div className="icons">
