@@ -118,55 +118,55 @@ const EditFlower = () => {
     //   <Button type="submit">Edit Flower</Button>
     // </form>
     <section className="contact pt-32" id="contact">
-    <h1 className="heading">
-      <span> Edit </span> Flower
-    </h1>
+      <h1 className="heading">
+        <span> Edit </span> Flower
+      </h1>
 
-    <div className="row">
-      <form onSubmit={handleFormSubmit}>
-      
-        <input
-         id="price"
-         name="price"
-         type="number"
-         defaultValue={flowerData.price}
-         placeholder="Enter Price"
-         className="box"
-         required
-        />
+      <div className="row">
+        <form onSubmit={handleFormSubmit}>
+
           <input
-          id="discount"
-          name="discount"
-          type="number"
-          defaultValue={flowerData.discount}
-          placeholder="Enter Discount"
-          className="box"
-          required
-        />
-        <input
-           id="imageURL"
-           name="imageURL"
-           type="text"
-           defaultValue={flowerData.imageURL}
-           placeholder="Enter Flower Image Link"
-           className="box"
-           required
-        />
-        <input
-        id="flowerTitle"
-        name="flowerTitle"
-        type="text"
-        defaultValue={flowerData.flowerTitle}
-        placeholder="Enter Flower Name"
-                className="box"
-        required
-        />
-        
-        <input type="submit" value="Edit Flower" className="btn" />
-      </form>
-    </div>
-  </section>
-    );
+            id="price"
+            name="price"
+            type="number"
+            defaultValue={flowerData.price}
+            placeholder="Enter Price"
+            className="box"
+            required
+          />
+          <input
+            id="discount"
+            name="discount"
+            type="number"
+            defaultValue={flowerData.discount}
+            placeholder="Enter Discount"
+            className="box"
+            required
+          />
+          <input
+            id="imageURL"
+            name="imageURL"
+            type="text"
+            defaultValue={flowerData.imageURL}
+            placeholder="Enter Flower Image Link"
+            className="box"
+            required
+          />
+          <input
+            id="flowerTitle"
+            name="flowerTitle"
+            type="text"
+            defaultValue={flowerData.flowerTitle}
+            placeholder="Enter Flower Name"
+            className="box"
+            required
+          />
+
+          <input type="submit" value="Edit Flower" className="btn" />
+        </form>
+      </div>
+    </section>
+  );
 };
 
 export default EditFlower;

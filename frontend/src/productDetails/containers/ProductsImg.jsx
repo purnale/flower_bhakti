@@ -1,23 +1,51 @@
-import img from "../../assets/pot_img_2.jpg";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+
 const ProductsImg = () => {
+  const { id } = useParams();
+  const api = `http://localhost:8000/api/flowers/${id}`;
+
+  const [flowerData, setFlowerData] = useState({
+    flowerTitle: "",
+    price: "",
+    imageURL: "",
+    discount: "",
+  });
+
+  useEffect(() => {
+    fetch(api)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Failed to fetch flower data");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setFlowerData(data);
+      })
+      .catch((error) => console.error("Error fetching flower data:", error));
+  }, [api]);
+
+
+
   return (
     <section className="about" id="about">
       <h1 className="heading">
-        <span> Product :</span> Product Name 
+        <span>Product :</span> {flowerData.flowerTitle}
       </h1>
 
       <div className="row">
         <div className="video-container">
-          <img src={img} />
+          <img src={flowerData.imageURL} alt={flowerData.flowerTitle} />
         </div>
 
         <div className="content">
-          <h3>Product Name</h3>
+          <h3>{flowerData.flowerTitle}</h3>
           <div className="mt-4">
             <span className="text-gray-700">Price: </span>
             <span className="text-xl font-semibold text-indigo-600">
-            ₹ 99.99
+              ₹ {flowerData.price - flowerData.price * (flowerData.discount / 100)}
             </span>
           </div>
           <div className="mt-4">
@@ -26,31 +54,16 @@ const ProductsImg = () => {
           </div>
           <div className="mt-4">
             <div className="stars">
-              <i>
-                <FaStar />
-              </i>
-              <i>
-                <FaStar />
-              </i>
-              <i>
-                <FaStar />
-              </i>
-              <i>
-                <FaStar />
-              </i>
-              <i>
-                <FaStar />
-              </i>
+              {[...Array(5)].map((_, index) => (
+                <i key={index}>
+                  <FaStar />
+                </i>
+              ))}
             </div>
           </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-            voluptates sed dolore exercitationem doloremque laudantium, facere
-            atque error suscipit voluptatum minus, illum quos est consequuntur
-            accusantium, libero necessitatibus ad fuga.
-          </p>
+          <p>Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum sint consectetur cupidatat.</p>
           <a href="#" className="btn">
-            Add To Card
+            Add To Cart
           </a>
           <a href="#" className="btn">
             Buy Now
@@ -62,3 +75,4 @@ const ProductsImg = () => {
 };
 
 export default ProductsImg;
+
